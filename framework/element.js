@@ -23,7 +23,7 @@ export function create(tag, props, ...children) {
   });
 
   children.forEach((child) => {
-    console.log("kkkkk", child);
+    console.log("child:", child);
     if (typeof child === "string") {
       el.appendChild(document.createTextNode(child));
     } else if (child instanceof Node) {

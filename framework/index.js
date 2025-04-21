@@ -29,6 +29,9 @@ const tags = [
   "select",
   "option",
   "textarea",
+  "text",
+  "type",
+  "placeholder",
   "img",
   "nav",
   "header",
@@ -37,6 +40,7 @@ const tags = [
   "article",
   "aside",
   "main",
+  "ul",
 ];
 
 export const elements = Object.fromEntries(
@@ -45,3 +49,5 @@ export const elements = Object.fromEntries(
     (props, ...children) => create(tag, props, ...children),
   ]),
 );
+
+export { Signal } from "./signal";
