@@ -6,7 +6,7 @@ import "./style.css";
 
 export const todos = Signal([
   { id: 1, title: "Learn JavaScript", completed: false },
-  { id: 2, title: "Build a mini framework", completed: true },
+  { id: 2, title: "Build a mini framework", completed: false },
   { id: 3, title: "Create TodoMVC", completed: false },
 ]);
 

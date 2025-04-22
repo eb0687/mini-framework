@@ -52,3 +52,16 @@ body {
   border-radius: 5px;
   cursor: pointer;
 }
+
+.todo-list {
+  list-style: none;
+  padding: 20px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
