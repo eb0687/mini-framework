@@ -15,11 +15,11 @@ let activeEffect = null;
  * @returns {Signal<T>} A signal with `.value`, `.subscribe()` and `.bind()`.
  */
 export function Signal(initialValue) {
-  let target = initialValue;
+  let value = initialValue;
   const subscribers = new Set();
 
   const proxy = new Proxy(
-    { target },
+    { value },
     {
       get: createGetHandler(subscribers),
       set: createSetHandler(subscribers),
