@@ -111,6 +111,11 @@ body {
   flex-direction: row;
 }
 
+.todo-replace {
+  height: 8%;
+  font-size: 30px;
+}
+
 .todo-input {
   width: 100%;
 }
