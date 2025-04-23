@@ -7,11 +7,5 @@ import { TodoList } from "./TodoList";
 const { div } = elements;
 
 export function App() {
-  return div(
-    { class: "todo-app" },
-    Header(),
-    TodoInput(),
-    TodoList(),
-    Footer(),
-  );
+  return div({ class: "todo-app" }, Header(), TodoList(), Footer());
 }
