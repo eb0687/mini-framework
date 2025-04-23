@@ -1,10 +1,8 @@
-import { elements } from "../../framework";
+import { div } from "../../framework";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 import { TodoInput } from "./TodoInput";
 import { TodoList } from "./TodoList";
-
-const { div } = elements;
 
 export function App() {
   return div({ class: "todo-app" }, Header(), TodoList(), Footer());

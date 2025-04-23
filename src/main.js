@@ -1,4 +1,4 @@
-import { elements } from "../framework/index.js";
+import { div } from "../framework/index.js";
 import { link, router } from "../framework/router.js";
 import { App } from "./components/App.js";
 import { Signal } from "../framework";
@@ -12,7 +12,6 @@ export const todos = Signal([
 
 export const filter = Signal("all");
 
-const { div, button } = elements;
 const todoApp = App();
 
 const pageNotFound = div({}, "Page Not Found", link("/hello", "Take me home"));
