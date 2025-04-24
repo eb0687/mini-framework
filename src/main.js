@@ -17,12 +17,12 @@ const todoApp = App();
 const pageNotFound = div(
   { class: "not-found" },
   "Page Not Found",
-  link("/home", "Take me home"),
+  link("/", "Take me home"),
 );
 
 // NOTE: this makes it globally accessbile
 window.routes = {
-  "/home": todoApp,
+  "/": todoApp,
   "/404": pageNotFound,
 };
 
