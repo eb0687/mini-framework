@@ -13,3 +13,18 @@ This mini framework helps you build web applications with ease by providing simp
 
 This document serves as a basic guide on how to utilize the framework to build
 simple SPA web apps with reactivity.
+
+# Folder structure
+
+TODO: make a quick start guide here
+
+```sh
+.
+├── docs
+│   ├── docs            <-- you are here
+├── framework           <-- mini-framework lives here, duh...
+├── public
+└── src                 <-- your app goes here...
+    └── components
+
+```
