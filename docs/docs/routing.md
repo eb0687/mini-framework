@@ -75,3 +75,7 @@ window.routes = {
 
 router();
 ```
+
+:::warning
+Ensure that a 404 route exists or else the app will not work
+:::

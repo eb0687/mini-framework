@@ -17,4 +17,5 @@ window.routes = {
   "/": page,
   "/404": pageNotFound,
 };
+
 router();

@@ -77,7 +77,7 @@ export const customEl = (props, ...children) =>
 
 ### Example
 
-This is yet another example which renders a div with a heading, a paragraph, and a button demonstrating a JSX-like component creation workflow. All elements are created using the exported factories.
+This is an example which renders a div with a heading, a paragraph, and a button demonstrating a JSX-like component creation workflow. All elements are created using the exported factories.
 
 ```js
 import { div, h1, p, button } from "../../framework/";
