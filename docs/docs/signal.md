@@ -50,33 +50,48 @@ name.value = "Bob"; // Logs: Name is now Bob
 - Bind a signal to a text node
 
 ```js
-import { create } from "./framework";
+import { div, Signal } from "../../framework";
+import { router } from "../../framework/router";
 
-const greeting = Signal("Hello!");
-
-document.body.appendChild(create("p", {}, greeting.bind()));
+const greeting = Signal("Hello World!");
+const greetingDisplay = greeting.bind((v) => div({}, `${v}`));
 
 setTimeout(() => {
-  greeting.value = "Hi there!"; // Text updates automatically
-}, 1000);
+  greeting.value = "Hello Universe!";
+}, 2000);
+
+const page = div({ class: "app" }, greetingDisplay);
+
+const pageNotFound = div({ class: "not-found" }, "Page Not Found");
+
+window.routes = {
+  "/": page,
+  "/404": pageNotFound,
+};
+router();
 ```
 
 Bind a signal with a custom element callback
 
 ```js
-import { create } from "./framework";
+import { div, Signal } from "../../framework";
+import { router } from "../../framework/router";
 
 const counter = Signal(0);
-
-const counterDisplay = counter.bind((value) =>
-  create("h2", {}, `Count: ${value}`),
-);
-
-document.body.appendChild(counterDisplay);
+const counterDisplay = counter.bind((value) => div({}, `Count: ${value}`));
 
 setInterval(() => {
-  counter.value++; // The <h2> is updated with new value every second
-}, 1000);
+  counter.value++;
+}, 2000);
+
+const pageNotFound = div({ class: "not-found" }, "Page Not Found");
+
+window.routes = {
+  "/": counterDisplay,
+  "/404": pageNotFound,
+};
+
+router();
 ```
 
 :::note

@@ -1,4 +1,4 @@
-import { div, button } from "../../framework";
+import { div, button } from "../../../framework";
 import { filter, todos } from "../main";
 
 export function Footer() {

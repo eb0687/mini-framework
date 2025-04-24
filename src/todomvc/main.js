@@ -1,7 +1,7 @@
-import { div } from "../framework/index.js";
-import { link, router } from "../framework/router.js";
+import { div } from "../../framework/index.js";
+import { link, router } from "../../framework/router.js";
 import { App } from "./components/App.js";
-import { Signal } from "../framework";
+import { Signal } from "../../framework";
 import "./style.css";
 
 export const todos = Signal([
