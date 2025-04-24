@@ -14,7 +14,11 @@ export const filter = Signal("all");
 
 const todoApp = App();
 
-const pageNotFound = div({}, "Page Not Found", link("/hello", "Take me home"));
+const pageNotFound = div(
+  { class: "not-found" },
+  "Page Not Found",
+  link("/home", "Take me home"),
+);
 
 // NOTE: this makes it globally accessbile
 window.routes = {

@@ -23,5 +23,9 @@ export function navigate(path) {
 }
 
 export function link(href, ...children) {
-  return create("pathLink", { onClick: () => navigate(href) }, ...children);
+  return create(
+    "pathLink",
+    { class: "custom-link", onClick: () => navigate(href) },
+    ...children,
+  );
 }
