@@ -26,32 +26,22 @@ This must be called at the end of your `index.js` to function correctly.
 
 ---
 
-## navigate(path: string)
-
-Programmatically navigates to a different route and updates the DOM without reloading the page. This utilizes the javascript's pushState() method to add
-to the browser's history stack.
-
-```js
-import { navigate } from "../framework/router";
-
-navigate("/about");
-```
-
 ## link(href: string, ...children: HTMLElement[])
 
-Creates a custom link element that, when clicked, calls navigate(href) instead of triggering a full page reload.
+A custom link element that, when clicked, calls navigate(path) instead of triggering a full page reload.
 
 :::note
 Why not use a regular a tag?
 
 The browser would reload the page and make a new request to the server.
-In an SPA, you want to stay on the same page and just swap the content dynamically — that’s why you intercept clicks and use navigate().
+In an SPA, you want to stay on the same page and just swap the content dynamically. Behind the scenes link calls on a custom function navigate() which
+handles this for us.
 :::
 
 ```js
 import { link } from "../framework/router";
 
-const aboutLink = link("/about", "About");
+const aboutPage = link("/about", "About");
 ```
 
 ---
