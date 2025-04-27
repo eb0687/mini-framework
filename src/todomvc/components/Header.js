@@ -3,10 +3,10 @@ import { todos } from "../main";
 import { TodoInput } from "./TodoInput";
 
 export function Header() {
-  // const todoCount = h3({ class: "todo-count" }, `Total: ${todos.value.length}`);
-  const todoCount = todos.bind((list) =>
-    h3({ class: "todo-count" }, `Total: ${list.length}`),
-  );
+  const todoCount = todos.bind((list) => {
+    const remainingTodos = list.filter((todo) => !todo.completed).length;
+    return h3({ class: "todo-count" }, `Remaining: ${remainingTodos}`);
+  });
 
   todos.subscribe(() => {
     todoCount.textContent = `total: ${todos.value.length}`;
