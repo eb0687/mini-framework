@@ -122,10 +122,11 @@ body {
 
 .footer {
   display: flex;
-  justify-content: center;
+  justify-content: normal;
   align-items: center;
   margin-top: 20px;
   gap: 15px;
+  width: 100%;
 }
 
 .not-found {

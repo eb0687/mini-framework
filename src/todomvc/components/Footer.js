@@ -15,16 +15,37 @@ export function Footer() {
       name[0].toUpperCase() + name.slice(1),
     ),
   );
+  const container = div({ class: "footer" }, ...buttons);
 
-  const clearButton = button(
-    {
-      class: "btn",
-      onClick: () => {
-        todos.value = todos.value.filter((todo) => !todo.completed);
-      },
-    },
-    "Clear completed",
-  );
+  // This handles the clearButton visiblity
+  function updateClearButton() {
+    const completedTodos = todos.value.filter((todo) => todo.completed);
+    const isCompleted = completedTodos.length > 0;
 
-  return div({ class: "footer" }, ...buttons, clearButton);
+    const existingClearButton = container.querySelector(".clear-completed");
+
+    if (isCompleted && !existingClearButton) {
+      const clearButton = button(
+        {
+          class: "btn clear-completed",
+          onClick: () => {
+            todos.value = todos.value.filter((todo) => !todo.completed);
+          },
+        },
+        "Clear completed",
+      );
+      container.append(clearButton);
+    } else if (!isCompleted && existingClearButton) {
+      // Remove the button if no completed todos exist
+      existingClearButton.remove();
+    }
+  }
+
+  todos.subscribe(updateClearButton);
+  filter.subscribe(updateClearButton);
+
+  // Initial check for clear button visibility
+  updateClearButton();
+
+  return container;
 }
