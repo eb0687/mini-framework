@@ -1,0 +1,10 @@
+.home {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-item {
+  cursor: pointer;
+  text-decoration: underline;
+  color: blue;
+}
