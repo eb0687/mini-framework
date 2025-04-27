@@ -27,7 +27,18 @@ This must be called at the end of your `index.js` to function correctly.
 
 ---
 
-## link(href: string, ...children: HTMLElement[])
+## link(href, ...children)
+
+### **Parameters**
+
+- **`href`** (`string`)  
+  The route defined in the window.route
+  Example: "/home", "/404"
+
+- **`...children`** (`string | Node`)
+  Any number of child elements to append to the created element.
+  - Strings are converted to text nodes.
+  - Nodes are appended directly.
 
 A custom link element that, when clicked, calls navigate(path) instead of triggering a full page reload.
 
@@ -95,5 +106,7 @@ router();
 ```
 
 :::warning
-Ensure that a 404 route exists or else the app will not work
-:::
+
+- Ensure that the window.routes is defined or the app will not work
+- Ensure that a 404 route exists or else the app will not work
+  :::
