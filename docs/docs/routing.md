@@ -4,9 +4,10 @@ sidebar_position: 3
 
 # Routing
 
-This module provides a minimal client-side router for single-page applications (SPAs).
-It allows defining route handlers, navigating programmatically, and creating link
-elements that update the browser's history without a full page reload.
+This module provides a minimal client-side router for use in single-page applications (SPAs).
+It allows defining route handlers, navigating programmatically, and creating link elements
+that update both the URL and the app’s state based on user actions, enabling smooth navigation
+without reloading the page.
 
 ---
 
