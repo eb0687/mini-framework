@@ -25,9 +25,9 @@ const otherPage = div(
 );
 
 const pageNotFound = div(
-  { class: "not-found" },
-  "Page Not Found",
-  link("/", "Take me home"),
+  { class: "page" },
+  h1({}, "Page Not Found"),
+  ul({}, li({ class: "list-item" }, link("/", "Home"))),
 );
 
 window.routes = {
