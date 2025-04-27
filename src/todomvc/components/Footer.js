@@ -1,4 +1,5 @@
 import { div, button } from "../../../framework";
+import { navigate } from "../../../framework/router";
 import { filter, todos } from "../main";
 
 export function Footer() {
@@ -10,6 +11,8 @@ export function Footer() {
         class: "btn",
         onClick: () => {
           filter.value = name;
+          const url = name === "all" ? "/" : `/${name}`;
+          navigate(url);
         },
       },
       name[0].toUpperCase() + name.slice(1),

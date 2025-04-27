@@ -23,6 +23,9 @@ const pageNotFound = div(
 // NOTE: this makes it globally accessbile
 window.routes = {
   "/": todoApp,
+  // "/all": todoApp,
+  "/active": todoApp,
+  "/completed": todoApp,
   "/404": pageNotFound,
 };
 
