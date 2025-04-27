@@ -50,27 +50,43 @@ const aboutPage = link("/about", "About");
 
 ```js
 // index.js
-import { router, link } from "./router";
-import { create } from "./element";
+import { div, h1, li, ul } from "../../framework";
+import { link, router } from "../../framework/router";
+import "./styles.css";
 
-const homePage = create(
-  "div",
-  {},
-  create("h1", {}, "Home"),
-  link("/about", document.createTextNode("Go to About")),
+const homePage = div(
+  { class: "page" },
+  h1({}, "Welcome to the home page"),
+  ul(
+    {},
+    li({ class: "list-item" }, link("/about", "About Page")),
+    li({ class: "list-item" }, link("/other", "Another Page")),
+  ),
 );
 
-const aboutPage = create(
-  "div",
-  {},
-  create("h1", {}, "About"),
-  link("/", document.createTextNode("Back to Home")),
+const aboutPage = div(
+  { class: "page" },
+  h1({}, "Welcome to the about page"),
+  ul({}, li({ class: "list-item" }, link("/", "Home"))),
+);
+
+const otherPage = div(
+  { class: "page" },
+  h1({}, "Welcome to yet another page"),
+  ul({}, li({ class: "list-item" }, link("/", "Home"))),
+);
+
+const pageNotFound = div(
+  { class: "page" },
+  h1({}, "Page Not Found"),
+  ul({}, li({ class: "list-item" }, link("/", "Home"))),
 );
 
 window.routes = {
   "/": homePage,
   "/about": aboutPage,
-  "/404": create("div", {}, "Not Found"),
+  "/other": otherPage,
+  "/404": pageNotFound,
 };
 
 router();
