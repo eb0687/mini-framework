@@ -40,6 +40,7 @@ function createTodoItem(todo) {
     checkbox,
     label(
       {
+        class: "todo-item-text",
         onClick: () => {
           const oldItem = document.querySelector(`#todo-${todo.id}`);
           const inputEl = input({

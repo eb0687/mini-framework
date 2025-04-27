@@ -98,10 +98,18 @@ body {
   cursor: pointer;
 }
 
+.todo-item-text {
+  width: 100%;
+  word-break: break-word;
+}
+
 .todo-item {
   display: flex;
   align-items: center;
   gap: 10px;
+  padding: 5px;
+  font-size: 20px;
+  overflow-wrap: break-word;
 }
 
 .todo-form {
