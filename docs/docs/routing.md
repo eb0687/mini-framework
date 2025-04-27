@@ -16,6 +16,7 @@ without reloading the page.
 Initializes the router by checking the current path (window.location.pathname) and rendering the associated page into the app element.
 
 ```js
+// index.js
 import { router } from "../framework/router";
 
 router();
@@ -24,6 +25,18 @@ router();
 :::warning
 This must be called at the end of your `index.js` to function correctly.
 :::
+
+For the router() to function at all it is a must to define the window.routes,
+below is an example:
+
+```js
+window.routes = {
+  "/": homePage,
+  "/about": aboutPage,
+  "/other": otherPage,
+  "/404": pageNotFound,
+};
+```
 
 ---
 
@@ -41,6 +54,7 @@ This must be called at the end of your `index.js` to function correctly.
   - Nodes are appended directly.
 
 A custom link element that, when clicked, calls navigate(path) instead of triggering a full page reload.
+For styling link() is given a predefined class called `custom-link`
 
 :::note
 Why not use a regular a tag?
