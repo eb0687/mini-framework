@@ -1,9 +1,15 @@
 import { div } from "../../../framework";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
-import { TodoInput } from "./TodoInput";
 import { TodoList } from "./TodoList";
+import { ToggleButton } from "./ToggleButton";
 
 export function App() {
-  return div({ class: "todo-app" }, Header(), TodoList(), Footer());
+  return div(
+    { class: "todo-app" },
+    Header(),
+    ToggleButton(),
+    TodoList(),
+    Footer(),
+  );
 }

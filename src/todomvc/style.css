@@ -151,3 +151,8 @@ body {
 .custom-link:hover {
   color: #89b482;
 }
+
+.toggle-btn-container {
+  display: flex;
+  width: 100%;
+}
