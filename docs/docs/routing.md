@@ -77,7 +77,7 @@ const aboutPage = link("/about", "About");
 
 ```js
 // index.js
-import { div, h1, li, ul } from "../../framework";
+import { div, h1, li, p, ul } from "../../framework";
 import { link, router } from "../../framework/router";
 import "./styles.css";
 
@@ -94,7 +94,11 @@ const homePage = div(
 const aboutPage = div(
   { class: "page" },
   h1({}, "Welcome to the about page"),
-  ul({}, li({ class: "list-item" }, link("/", "Home"))),
+  ul(
+    {},
+    li({ class: "list-item" }, link("/", "Home")),
+    li({ class: "list-item" }, link("/other", p({}, "Some other page..."))),
+  ),
 );
 
 const otherPage = div(
