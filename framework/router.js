@@ -1,6 +1,13 @@
 import { create } from "./element";
 
 export function router() {
+  if (!window.routes) {
+    console.error(
+      "No routes found. Please define window.routes before using the router.",
+    );
+    return;
+  }
+
   const path = window.location.pathname;
   console.log("path", path);
 
