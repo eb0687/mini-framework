@@ -1,4 +1,4 @@
-import { input, label, li, ul } from "../../../framework";
+import { button, input, label, li, ul } from "../../../framework";
 import { filter, todos } from "../main";
 
 /**
@@ -21,6 +21,16 @@ function createTodoItem(todo) {
   });
 
   checkbox.checked = todo.completed;
+
+  const deleteItem = button(
+    {
+      class: "todo-delete-btn",
+      onClick: () => {
+        todos.value = todos.value.filter((t) => t.id !== todo.id);
+      },
+    },
+    "x",
+  );
 
   return li(
     {
@@ -66,6 +76,7 @@ function createTodoItem(todo) {
       },
       todo.title,
     ),
+    deleteItem,
   );
 }
 
