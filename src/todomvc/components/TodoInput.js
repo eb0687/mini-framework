@@ -7,7 +7,7 @@ export function TodoInput() {
 
   const todoInput = input({
     type: "text",
-    placeholder: "Add a new todo",
+    placeholder: "Add a new todo...",
     class: "todo-input",
     value: title.value,
     onInput: (e) => {
