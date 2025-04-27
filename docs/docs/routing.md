@@ -35,7 +35,8 @@ A custom link element that, when clicked, calls navigate(path) instead of trigge
 Why not use a regular a tag?
 
 The browser would reload the page and make a new request to the server.
-In an SPA, you want to stay on the same page and just swap the content dynamically. Behind the scenes link calls on a custom function navigate() which
+In an SPA, you want to stay on the same page and just swap the content dynamically.
+Behind the scenes link calls on a custom function navigate() which
 handles this for us.
 :::
 
