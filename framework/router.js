@@ -29,3 +29,5 @@ export function link(href, ...children) {
     ...children,
   );
 }
+
+window.addEventListener("popstate", router);
