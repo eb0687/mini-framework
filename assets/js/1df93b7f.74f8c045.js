@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[583],{6107:(s,e,n)=>{n.r(e),n.d(e,{default:()=>c});var o=n(797),r=n(6347),t=n(4848);function c(){const{siteConfig:s}=(0,o.A)();return(0,t.jsx)(r.rd,{to:"/mini-framework/docs/intro"})}}}]);
