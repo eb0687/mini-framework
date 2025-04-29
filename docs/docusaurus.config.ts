@@ -84,7 +84,7 @@ const config: Config = {
           label: "Tutorial",
         },
         {
-          href: "https://github.com/facebook/docusaurus",
+          href: "https://github.com/eb0687/",
           label: "GitHub",
           position: "right",
         },
