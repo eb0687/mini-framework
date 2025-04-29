@@ -7,7 +7,6 @@ import HomepageFeatures from "@site/src/components/HomepageFeatures";
 import Heading from "@theme/Heading";
 
 import styles from "./index.module.css";
-import { Redirect } from "@docusaurus/router";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -23,7 +22,7 @@ function HomepageHeader() {
             className="button button--secondary button--lg"
             to="/docs/intro"
           >
-            Get started with my mini framework
+            documentation
           </Link>
         </div>
       </div>
@@ -33,7 +32,6 @@ function HomepageHeader() {
 
 export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
-  // return <Redirect to="/mini-framework/docs/intro"></Redirect>;
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
