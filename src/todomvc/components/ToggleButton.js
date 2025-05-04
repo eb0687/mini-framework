@@ -14,18 +14,22 @@ export function ToggleButton() {
     },
   });
 
-  // ensure that the toggle checkbox is unchecked if no items in the list
-  todos.subscribe(() => {
-    if (todos.value.length === 0) {
-      toggle.checked = false;
-    } else {
-      toggle.checked = todos.value.every((todo) => todo.completed);
-    }
-  });
-
-  return div(
+  const container = div(
     { class: "toggle-btn-container" },
     toggle,
     "Select / Deselect all items",
   );
+
+  // Subscribe to todos and reactively update toggle state and visibility
+  todos.subscribe(() => {
+    if (todos.value.length === 0) {
+      toggle.checked = false;
+      container.style.display = "none";
+    } else {
+      container.style.display = "";
+      toggle.checked = todos.value.every((todo) => todo.completed);
+    }
+  });
+
+  return container;
 }
