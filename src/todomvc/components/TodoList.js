@@ -41,7 +41,7 @@ function createTodoItem(todo) {
     label(
       {
         class: "todo-item-text",
-        onClick: () => {
+        onDblClick: () => {
           const oldItem = document.querySelector(`#todo-${todo.id}`);
           const inputEl = input({
             class: "todo-replace",
