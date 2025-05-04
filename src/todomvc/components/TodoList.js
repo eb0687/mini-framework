@@ -42,6 +42,16 @@ function createTodoItem(todo) {
       {
         class: "todo-item-text",
         onDblClick: () => {
+          const existingEditing = document.querySelector(".todo-item.editing");
+          if (existingEditing) {
+            const id = Number(existingEditing.id.replace("todo-", ""));
+            const originalTodo = todos.value.find((t) => t.id === id);
+            if (originalTodo) {
+              const restoredItem = createTodoItem(originalTodo);
+              existingEditing.replaceWith(restoredItem);
+            }
+          }
+
           const oldItem = document.querySelector(`#todo-${todo.id}`);
           const inputEl = input({
             class: "todo-replace",
@@ -61,6 +71,15 @@ function createTodoItem(todo) {
                 todos.value = [...todos.value];
               }
             },
+          });
+
+          // foxus the input box and set the cursor at the end of the text
+          setTimeout(() => {
+            inputEl.focus();
+            inputEl.setSelectionRange(
+              inputEl.value.length,
+              inputEl.value.length,
+            );
           });
 
           const newLi = li(
