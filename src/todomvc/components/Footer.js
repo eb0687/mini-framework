@@ -21,9 +21,12 @@ export function Footer() {
   const container = div({ class: "footer" }, ...buttons);
 
   // This handles the clearButton visiblity
-  function updateClearButton() {
+  function updateFooter() {
     const completedTodos = todos.value.filter((todo) => todo.completed);
     const isCompleted = completedTodos.length > 0;
+    const hasTodos = todos.value.length > 0;
+
+    container.style.display = hasTodos ? "block" : "none";
 
     const existingClearButton = container.querySelector(".clear-completed");
 
@@ -44,11 +47,11 @@ export function Footer() {
     }
   }
 
-  todos.subscribe(updateClearButton);
-  filter.subscribe(updateClearButton);
+  todos.subscribe(updateFooter);
+  filter.subscribe(updateFooter);
 
   // Initial check for clear button visibility
-  updateClearButton();
+  updateFooter();
 
   return container;
 }
