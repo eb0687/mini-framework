@@ -131,6 +131,11 @@ body {
   overflow-wrap: break-word;
 }
 
+.todo-item.completed .todo-item-text {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
 .todo-form {
   margin: 20px;
   width: 100%;
