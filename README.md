@@ -19,7 +19,7 @@ bun run dev
 - This TodoMVC app serves as a demonstration exercise to verify that the framework’s core features—such as routing,
   state management, and event handling—are working as intended. It mirrors the functionality of the [JavaScript ES5 TodoMVC example](https://todomvc.com/examples/javascript-es5/dist/#/).
 
-- For more details on how to use the framework, check out the [documentation](https://eb0687.github.io/mini-framework/).
+- For more details on how to use the framework, check out the [documentation](https://eb0687.github.io/mini-framework/). The documentation is done using markdown and hosted on github-pages.
 
 ## Author
 
