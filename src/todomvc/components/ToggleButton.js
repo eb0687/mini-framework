@@ -13,6 +13,16 @@ export function ToggleButton() {
       }));
     },
   });
+
+  // ensure that the toggle checkbox is unchecked if no items in the list
+  todos.subscribe(() => {
+    if (todos.value.length === 0) {
+      toggle.checked = false;
+    } else {
+      toggle.checked = todos.value.every((todo) => todo.completed);
+    }
+  });
+
   return div(
     { class: "toggle-btn-container" },
     toggle,
